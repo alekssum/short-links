@@ -6,13 +6,13 @@ services:
     ports:
       - 3306:3306
     restart: on-failure
-    container_name: astral-db
+    container_name: shortlinks-db
     tty: true
 
   app:
     build:
       context: ./
-    container_name: astral-app
+    container_name: shortlinks-app
     ports:
       - 3000:3000
     restart: on-failure
@@ -20,6 +20,6 @@ services:
       - database
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3306"]
-      interval: 2s
+      interval: 4s
       timeout: 1s
       retries: 10

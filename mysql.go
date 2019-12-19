@@ -10,7 +10,7 @@ const (
 	host   = "database:3306"
 	user   = "root"
 	pass   = "qwerty"
-	dbname = "astral"
+	dbname = "shortlinks"
 	driver = "mysql"
 )
 

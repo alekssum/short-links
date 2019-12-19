@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"astral-test/models"
+	"shortlinks/models"
 )
 
 var db *sql.DB

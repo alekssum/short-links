@@ -1,4 +1,4 @@
-use astral;
+use shortlinks;
 
 CREATE TABLE users (
     id MEDIUMINT NOT NULL AUTO_INCREMENT,
