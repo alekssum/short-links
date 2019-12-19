@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  database:
+    build: ./db
+    ports:
+      - 3306:3306
+    restart: on-failure
+    container_name: astral-db
+    tty: true
+
+  app:
+    build:
+      context: ./
+    container_name: astral-app
+    ports:
+      - 3000:3000
+    restart: on-failure
+    depends_on:
+      - database
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3306"]
+      interval: 2s
+      timeout: 1s
+      retries: 10
